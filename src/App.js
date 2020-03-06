@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import AddTask from "./pages/AddTask";
+import EditTask from "./pages/EditTask";
+import TaskList from "./pages/TaskList";
+import AddUser from "./pages/AddUser";
+import EditUser from "./pages/EditUser";
+import UserList from "./pages/UserList";
+
+import AccessMockAPI from "./api/AccessMockAPI";
+import Access from "./components/Access";
+
+export default class App extends Component {
+  render() {
+    AccessMockAPI.setCurrentPath();
+    if (AccessMockAPI.giveAccess()) {
+      return (
+        <>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/add-task" component={AddTask} />
+            <Route exact path="/edit-task/:id" component={EditTask} />
+            <Route exact path="/tasks-list" component={TaskList} />
+            <Route exact path="/add-user" component={AddUser} />
+            <Route exact path="/edit-user/:id" component={EditUser} />
+            <Route exact path="/users-list" component={UserList} />
+          </Switch>
+        </>
+      );
+    } else {
+      return <Access />;
+    }
+  }
 }
-
-export default App;

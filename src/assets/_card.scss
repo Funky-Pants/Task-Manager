@@ -1,0 +1,25 @@
+.card{
+    color: #000;
+}
+.card hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #918f8f, rgba(0, 0, 0, 0));
+}
+.card h3{
+    text-align: center;
+    color: #000;
+
+}
+.card p, .state{
+    color: #918f8f
+}
+.card .rating, .card-link:hover{
+    color: red
+}
+.card-link {
+    color: #000;
+}
+.card-link i{
+    font-size: 20px;
+}

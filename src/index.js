@@ -1,12 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Header from "./components/Header";
+import Main from "./App";
+import UsersMockAPI from "./api/UsersMockAPI";
+import TasksMockAPI from "./api/TasksMockAPI";
+import Access from "./components/Access";
+import AccessMockAPI from "./api/AccessMockAPI";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import './assets/index.scss';
+
+
+export default class App extends Component {
+  render() {
+    UsersMockAPI.seedAdmin();
+    TasksMockAPI.seed();
+    AccessMockAPI.setUser();
+    
+    return (
+      <>
+        <Header />
+        <div className="container my-5">
+        {AccessMockAPI.giveAccess ? <Main /> : <Access />}
+        </div>
+      </>
+    );
+  }
+}
+
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);

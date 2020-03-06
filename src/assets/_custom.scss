@@ -1,0 +1,48 @@
+body{
+    color: #fff;
+    background-color: #343a40;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+h1{
+    color: rgb(40, 40, 40);
+    font-weight: bold;
+}
+h2{
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    font-size:22px;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1), rgba(0, 0, 0, 0));
+}
+.bg-light{
+	background: #fff!important;
+}
+.change-view-button:hover{
+	cursor:pointer;
+	color: rgb(255,0,0);
+}
+.cover-heading{
+	font-size: 55px;
+	color: #fff;
+	text-align: center;
+}
+.bg-task{
+	background-color: rgb(255,0,0);
+	color: #fff;
+}
+.text-task{
+	color: rgb(255,0,0);
+}
+.page-title{
+	color: #fff;
+	text-align: center;
+	font-size: 30px;
+}
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  }

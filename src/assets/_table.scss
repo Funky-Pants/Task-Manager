@@ -1,0 +1,22 @@
+table th {
+    color: #000;
+    font-size: 18px;
+    background: #fff;
+}
+.table-striped tbody tr:nth-of-type(n+1){
+    color: #ccc;
+}
+.table-striped tbody tr:nth-of-type(2n+1){
+    background: rgba(255, 255, 255, 0.2);
+    color: #ccc;
+}
+
+.user-link {
+    color: #ccc;
+}
+.user-link i{
+    font-size: 20px;
+}
+.user-link:hover{
+    color: red
+}
